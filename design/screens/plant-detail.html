@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="runo:device" content="phone">
+<title>Plant detail</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<script src="../prototype.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <button class="button ghost" data-goto="home">‹ Back</button>
+  <button class="button ghost">Edit</button>
+</header>
+<main class="screen stack gap-lg">
+  <div class="hero"></div>
+  <div class="stack gap-xs">
+    <div class="row-between">
+      <h1>Monstera</h1>
+      <span class="badge">Healthy</span>
+    </div>
+    <p class="muted">Monstera deliciosa · Living room</p>
+  </div>
+
+  <div class="grid">
+    <div class="card stack gap-xs">
+      <span class="muted">Water</span>
+      <strong class="big">Today</strong>
+    </div>
+    <div class="card stack gap-xs">
+      <span class="muted">Light</span>
+      <strong class="big">Bright</strong>
+    </div>
+  </div>
+
+  <button class="button primary">Mark as watered</button>
+
+  <div class="stack gap-sm">
+    <h2>Care log</h2>
+    <ul class="list">
+      <li class="row"><div class="grow">Watered</div><span class="muted">7 days ago</span></li>
+      <li class="row"><div class="grow">Fertilised</div><span class="muted">3 weeks ago</span></li>
+      <li class="row"><div class="grow">Repotted</div><span class="muted">4 months ago</span></li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>

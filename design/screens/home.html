@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="runo:device" content="phone">
+<title>My plants</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<script src="../prototype.js" defer></script>
+</head>
+<body>
+<main class="screen stack gap-lg">
+  <div class="row-between">
+    <div class="stack gap-xs">
+      <p class="muted">Good morning, Sam</p>
+      <h1>My plants</h1>
+    </div>
+    <div class="avatar" data-goto="profile">S</div>
+  </div>
+
+  <div class="card stack gap-sm">
+    <div class="row-between">
+      <h3>Today</h3>
+      <span class="badge">3 tasks</span>
+    </div>
+    <p class="muted">Water Monstera and Fern, mist the Calathea.</p>
+    <button class="button primary" data-goto="schedule">See schedule</button>
+  </div>
+
+  <input class="search" type="search" placeholder="Search your plants">
+
+  <div class="grid">
+    <div class="stack gap-sm" data-goto="plant-detail">
+      <div class="image"></div>
+      <h3>Monstera</h3>
+      <span class="muted">Water today</span>
+    </div>
+    <div class="stack gap-sm" data-goto="plant-detail">
+      <div class="image"></div>
+      <h3>Boston Fern</h3>
+      <span class="muted">Water today</span>
+    </div>
+    <div class="stack gap-sm" data-goto="plant-detail">
+      <div class="image"></div>
+      <h3>Calathea</h3>
+      <span class="muted">Mist today</span>
+    </div>
+    <div class="stack gap-sm" data-goto="plant-detail">
+      <div class="image"></div>
+      <h3>Snake Plant</h3>
+      <span class="muted">In 6 days</span>
+    </div>
+  </div>
+</main>
+<nav class="tabbar">
+  <span class="tab on" data-goto="home">Plants</span>
+  <span class="tab" data-goto="schedule">Schedule</span>
+  <span class="tab" data-goto="profile">Profile</span>
+</nav>
+</body>
+</html>

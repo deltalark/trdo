@@ -1,0 +1,129 @@
+[[element]]
+id = "customer"
+name = "Customer"
+kind = "person"
+description = "Shops and places orders"
+
+[[element]]
+id = "platform"
+name = "Shop Platform"
+kind = "boundary"
+description = "Cloud VPC"
+
+[[element]]
+id = "web-app"
+name = "Web App"
+kind = "container"
+tech = "React"
+icon = "monitor"
+
+[[element]]
+id = "api-gateway"
+name = "API Gateway"
+kind = "container"
+tech = "Nginx"
+icon = "network"
+
+[[element]]
+id = "orders-service"
+name = "Orders Service"
+kind = "container"
+tech = "Go"
+icon = "server"
+
+[[element]]
+id = "users-service"
+name = "Users Service"
+kind = "container"
+tech = "Node.js"
+icon = "server"
+
+[[element]]
+id = "event-bus"
+name = "Event Bus"
+kind = "queue"
+tech = "Kafka"
+
+[[element]]
+id = "orders-db"
+name = "Orders DB"
+kind = "database"
+tech = "PostgreSQL"
+
+[[element]]
+id = "users-db"
+name = "Users DB"
+kind = "database"
+tech = "PostgreSQL"
+
+[[element]]
+id = "notification-worker"
+name = "Notification Worker"
+kind = "container"
+tech = "Python"
+icon = "bell"
+
+[[element]]
+id = "email-provider"
+name = "Email Provider"
+kind = "external"
+tech = "SendGrid"
+
+[[relation]]
+id = "customer-to-web-app"
+from = "customer"
+to = "web-app"
+label = "Browses"
+tech = "HTTPS"
+
+[[relation]]
+id = "web-app-to-api-gateway"
+from = "web-app"
+to = "api-gateway"
+label = "Calls API"
+tech = "HTTPS / JSON"
+
+[[relation]]
+id = "api-gateway-to-orders-service"
+from = "api-gateway"
+to = "orders-service"
+label = "Routes orders"
+
+[[relation]]
+id = "api-gateway-to-users-service"
+from = "api-gateway"
+to = "users-service"
+label = "Routes accounts"
+
+[[relation]]
+id = "orders-service-to-orders-db"
+from = "orders-service"
+to = "orders-db"
+label = "Reads / writes"
+tech = "SQL"
+
+[[relation]]
+id = "users-service-to-users-db"
+from = "users-service"
+to = "users-db"
+label = "Reads / writes"
+tech = "SQL"
+
+[[relation]]
+id = "orders-service-to-event-bus"
+from = "orders-service"
+to = "event-bus"
+label = "Publishes OrderPlaced"
+
+[[relation]]
+id = "event-bus-to-notification-worker"
+from = "event-bus"
+to = "notification-worker"
+label = "Consumes events"
+
+[[relation]]
+id = "notification-worker-to-email-provider"
+from = "notification-worker"
+to = "email-provider"
+label = "Sends email"
+tech = "HTTPS"

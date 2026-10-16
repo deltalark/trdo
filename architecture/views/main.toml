@@ -1,0 +1,178 @@
+name = "Main"
+order = 0
+
+[[node]]
+id = "platform"
+x = 320.0
+y = 40.0
+w = 1180.0
+h = 620.0
+
+[[node]]
+id = "customer"
+x = 10.0
+y = 390.0
+w = 160.0
+h = 120.0
+
+[[node]]
+id = "web-app"
+x = 380.0
+y = 300.0
+w = 200.0
+h = 100.0
+parent = "platform"
+
+[[node]]
+id = "api-gateway"
+x = 640.0
+y = 300.0
+w = 200.0
+h = 100.0
+parent = "platform"
+
+[[node]]
+id = "orders-service"
+x = 920.0
+y = 120.0
+w = 220.0
+h = 100.0
+parent = "platform"
+
+[[node]]
+id = "users-service"
+x = 920.0
+y = 300.0
+w = 220.0
+h = 100.0
+parent = "platform"
+
+[[node]]
+id = "event-bus"
+x = 920.0
+y = 500.0
+w = 220.0
+h = 100.0
+parent = "platform"
+
+[[node]]
+id = "orders-db"
+x = 1220.0
+y = 120.0
+w = 200.0
+h = 100.0
+parent = "platform"
+
+[[node]]
+id = "users-db"
+x = 1220.0
+y = 300.0
+w = 200.0
+h = 100.0
+parent = "platform"
+
+[[node]]
+id = "notification-worker"
+x = 1220.0
+y = 500.0
+w = 200.0
+h = 100.0
+parent = "platform"
+effect = "pulse"
+
+[[node]]
+id = "email-provider"
+x = 1580.0
+y = 510.0
+w = 200.0
+h = 100.0
+
+[[edge]]
+id = "customer-to-web-app"
+route = "straight"
+arrow = "end"
+
+[[edge]]
+id = "web-app-to-api-gateway"
+route = "straight"
+arrow = "end"
+
+[[edge]]
+id = "api-gateway-to-orders-service"
+route = "elbow"
+arrow = "end"
+
+[[edge]]
+id = "api-gateway-to-users-service"
+route = "straight"
+arrow = "end"
+
+[[edge]]
+id = "orders-service-to-orders-db"
+route = "straight"
+arrow = "end"
+
+[[edge]]
+id = "users-service-to-users-db"
+route = "straight"
+arrow = "end"
+
+[[edge]]
+id = "orders-service-to-event-bus"
+route = "elbow"
+arrow = "end"
+motion = "packets"
+from-side = "left"
+to-side = "left"
+waypoints = [
+    [
+    880.0,
+    170.0,
+],
+    [
+    880.0,
+    550.0,
+],
+]
+
+[[edge]]
+id = "event-bus-to-notification-worker"
+route = "straight"
+arrow = "end"
+motion = "packets"
+
+[[edge]]
+id = "notification-worker-to-email-provider"
+route = "straight"
+arrow = "end"
+
+[[story]]
+name = "Place an order"
+
+[[story.step]]
+edge = "customer-to-web-app"
+caption = "The customer checks out in the web app"
+
+[[story.step]]
+edge = "web-app-to-api-gateway"
+caption = "The web app sends the order to the API"
+
+[[story.step]]
+edge = "api-gateway-to-orders-service"
+caption = "The gateway routes it to the Orders Service"
+
+[[story.step]]
+edge = "orders-service-to-orders-db"
+caption = "The order is saved"
+
+[[story.step]]
+edge = "orders-service-to-event-bus"
+caption = "An OrderPlaced event is published"
+
+[[story.step]]
+edge = "event-bus-to-notification-worker"
+caption = "The worker picks up the event"
+
+[[story.step]]
+edge = "notification-worker-to-email-provider"
+caption = "A confirmation email is sent"

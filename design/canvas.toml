@@ -1,0 +1,41 @@
+[[screen]]
+id = "sign-in"
+name = "Sign in"
+device = "phone"
+x = 0.0
+y = 964.0
+
+[[screen]]
+id = "home"
+name = "My plants"
+device = "phone"
+x = 510.0
+y = 0.0
+
+[[screen]]
+id = "plant-detail"
+name = "Plant detail"
+device = "phone"
+x = 1020.0
+y = 1928.0
+
+[[screen]]
+id = "schedule"
+name = "Schedule"
+device = "phone"
+x = 1020.0
+y = 964.0
+
+[[screen]]
+id = "profile"
+name = "Profile"
+device = "phone"
+x = 1020.0
+y = 0.0
+
+[[screen]]
+id = "sign-in-2"
+name = "Sign in"
+device = "phone"
+x = 0.0
+y = 0.0

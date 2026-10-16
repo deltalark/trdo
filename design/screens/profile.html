@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="runo:device" content="phone">
+<title>Profile</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<script src="../prototype.js" defer=""></script>
+</head>
+<body>
+<main class="screen stack gap-lg">
+  <div class="stack gap-sm center-text">
+    <div class="avatar" style="width: 72px; height: 72px;">S</div>
+    <h2>Sam Rivera</h2>
+    <p class="muted">12 plants · Caring since March</p>
+  </div>
+
+  <div class="stack gap-sm">
+    <h3 class="muted" style="padding: 0 calc(var(--space) * 2);">Reminders</h3>
+    <ul class="list card" style="padding: calc(var(--space) * 0.5) calc(var(--space) * 2);">
+      <li class="row" style="min-height: calc(var(--space) * 7);"><div class="grow">Watering reminders</div><span class="switch on"></span></li>
+      <li class="row" style="min-height: calc(var(--space) * 7);"><div class="grow">Weekly summary</div><span class="switch on"></span></li>
+      <li class="row" style="min-height: calc(var(--space) * 7);"><div class="grow">Weather alerts</div><span class="switch"></span></li>
+    </ul>
+  </div>
+
+  <div class="stack gap-sm">
+    <h3 class="muted">Account</h3>
+    <ul class="list card">
+      <li class="row"><div class="grow">Edit profile</div><span class="muted">›</span></li>
+      <li class="row"><div class="grow">Help &amp; feedback</div><span class="muted">›</span></li>
+    </ul>
+  </div>
+
+  <button class="button" data-goto="sign-in">Sign out</button>
+</main>
+<nav class="tabbar">
+  <span class="tab" data-goto="home">Plants</span>
+  <span class="tab" data-goto="schedule">Schedule</span>
+  <span class="tab on" data-goto="profile">Profile</span>
+</nav>
+
+
+
+
+
+
+
+
+</body></html>

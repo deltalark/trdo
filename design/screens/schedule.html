@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="runo:device" content="phone">
+<title>Schedule</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<script src="../prototype.js" defer></script>
+</head>
+<body>
+<main class="screen stack gap-lg">
+  <div class="stack gap-xs">
+    <h1>Schedule</h1>
+    <p class="muted">3 tasks today, 2 this week</p>
+  </div>
+
+  <div class="stack gap-sm">
+    <h3 class="muted">Today</h3>
+    <ul class="list card">
+      <li class="row" data-goto="plant-detail"><div class="avatar">M</div><div class="grow stack"><strong>Water Monstera</strong><span class="muted">500 ml</span></div><span class="badge">Due</span></li>
+      <li class="row" data-goto="plant-detail"><div class="avatar">B</div><div class="grow stack"><strong>Water Boston Fern</strong><span class="muted">300 ml</span></div><span class="badge">Due</span></li>
+      <li class="row" data-goto="plant-detail"><div class="avatar">C</div><div class="grow stack"><strong>Mist Calathea</strong><span class="muted">Leaves only</span></div><span class="badge">Due</span></li>
+    </ul>
+  </div>
+
+  <div class="stack gap-sm">
+    <h3 class="muted">This week</h3>
+    <ul class="list card">
+      <li class="row" data-goto="plant-detail"><div class="avatar">P</div><div class="grow stack"><strong>Fertilise Pothos</strong><span class="muted">Friday</span></div></li>
+      <li class="row" data-goto="plant-detail"><div class="avatar">S</div><div class="grow stack"><strong>Water Snake Plant</strong><span class="muted">Sunday</span></div></li>
+    </ul>
+  </div>
+</main>
+<nav class="tabbar">
+  <span class="tab" data-goto="home">Plants</span>
+  <span class="tab on" data-goto="schedule">Schedule</span>
+  <span class="tab" data-goto="profile">Profile</span>
+</nav>
+</body>
+</html>
